@@ -38,9 +38,11 @@ Other validators (bera) will be here soon.  Need to monitor these for awhile and
 
 ## The Battles
 
-Nothing is ever easy, and the hard parts are generally unpredictable.  In designing this whole system, here were the major 
+Nothing is ever easy, and the hard parts are generally unpredictable.  In designing this whole system, here were the major trains we got hit by that took longer than one would've thought.  Things aside from the general work involved in developing an ansible role for rke2, or helm charts for geth and lighthouse. 
  
+- decisions... what pc to buy, what to do with storage, reverse proxy in the cloud?  private vpn server in the cloud?  
 - selinux:  0% chance we would run this without selinux, but of course selinux = battles.  Chatgpt ftw.
 - keepalived script:  figuring out how to tell keepalived to not participate in the consensus until the rke2 service was ready was really tricky for some reason, but was not an option to not have this working.
-- nginx tcp/udp services:  this was the biggest battle of all.  Took alot of troubleshooting and help from various communities, but eventually learned that, basically, ingress-nginx was not going to be able to proxy the tcp/udp services.  The downside of this is that now we must forward ports directly to specific nodes where I know my applications are running.  Between this and the storage situation, basically what we have now is the same thing as a bare metal setup.  Gotta roll over before you can crawl though.
-- decisions... what pc to buy, what to do with storage, reverse proxy in the cloud?  private vpn server in the cloud?  
+- nginx tcp/udp services:  Took alot of troubleshooting and help from various communities, but eventually learned that, basically, ingress-nginx was not going to be able to proxy the tcp/udp services.  The downside of this is that now we must forward ports directly to specific nodes where I know my applications are running.  
+
+Between that and the storage situation, basically what we have now is the same thing as a bare metal setup.  Gotta roll over before you can crawl though.
