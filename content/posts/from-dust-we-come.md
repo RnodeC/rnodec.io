@@ -1,7 +1,7 @@
 ---
 title: "From Dust We Come"
 date: 2023-04-23
-draft: true
+draft: false
 ---
 
 Any good validator should be running a robust architecture - in a real datacenter with security, redundant power and networking, yada yada.  Or better yet across multiple real datacenters for higher reliability.  That can blow up the opex though.  Real validators should also be running some form of the sentry node architecture to defend against ddos attacks.  Sentry node architecture, however, literally implies many active nodes at all times (more than the bare minimum of one), multiplying your capex and opex. 
